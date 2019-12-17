@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">bitcoin</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_data">Oops... No Data</string>
+    <string name="transaction_rate">This graph shows the number of Bitcoin
+        transactions added to the mempool per second.</string>
+    <string name="timespan">Time span in weeks</string>
+    <string name="rollingAverage">Rolling Average</string>
+    <string name="loading">Loading... Please wait</string>
+</resources>

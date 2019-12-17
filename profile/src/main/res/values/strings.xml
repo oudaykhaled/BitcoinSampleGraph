@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">profile</string>
+    <string name="profile.label.login">Login</string>
+    <string name="profile.button.login">Login</string>
+</resources>

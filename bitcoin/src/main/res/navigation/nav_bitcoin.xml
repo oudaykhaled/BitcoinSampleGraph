@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_bitcoin"
+    app:startDestination="@id/bitcoinChartFragment">
+
+    <fragment
+        android:id="@+id/bitcoinChartFragment"
+        android:name="com.ouday.bitcoin.presentation.ui.BitcoinChartFragment"
+        android:label="BitcoinChartFragment" />
+</navigation>

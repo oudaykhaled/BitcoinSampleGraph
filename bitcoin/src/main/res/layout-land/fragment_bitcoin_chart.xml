@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.BitcoinChartFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.ouday.core.component.ui.textview.TextViewBold
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/transaction_rate"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/chartContainer"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/linechart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:layoutDirection="locale"
+                android:minHeight="170dp" />
+
+            <com.ouday.core.component.ui.textview.TextViewBold
+                android:id="@+id/emptyStateView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/no_data"
+                android:visibility="gone" />
+
+
+        </FrameLayout>
+
+
+        <com.akaita.android.circularseekbar.CircularSeekBar
+            android:id="@+id/seekbarWeeks"
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+            app:enabled="true"
+            app:innerCircleColor="#e0f7e9"
+            app:layout_constraintBottom_toTopOf="@+id/textViewBold"
+            app:layout_constraintStart_toEndOf="@+id/chartContainer"
+            app:layout_constraintTop_toTopOf="@+id/chartContainer"
+            app:max="50"
+            app:min="0"
+            app:progress="0"
+            app:progressTextColor="@android:color/black"
+            app:progressTextSize="26"
+            app:ringColor="@color/colorAccent"
+            app:ringWidth="0.5"
+            android:layout_marginStart="8dp"
+            app:showIndicator="true"
+            app:showInnerCircle="true"
+            app:showProgressText="true"
+            app:speedMultiplier="2" />
+
+        <com.akaita.android.circularseekbar.CircularSeekBar
+            android:id="@+id/seekbarRollingAverage"
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+            android:layout_marginEnd="16dp"
+            app:enabled="true"
+            app:innerCircleColor="#e0f7e9"
+            app:layout_constraintStart_toEndOf="@+id/seekbarWeeks"
+            app:layout_constraintTop_toTopOf="@+id/seekbarWeeks"
+            app:max="50"
+            app:min="0"
+            app:progress="0"
+            android:layout_marginStart="8dp"
+            app:progressTextColor="@android:color/black"
+            app:progressTextSize="26"
+            app:ringColor="@color/colorAccent"
+            app:ringWidth="0.5"
+            app:showIndicator="true"
+            app:showInnerCircle="true"
+            app:showProgressText="true"
+            app:speedMultiplier="2" />
+
+        <com.ouday.core.component.ui.textview.TextViewBold
+            android:id="@+id/textViewBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/timespan"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/chartContainer"
+            app:layout_constraintEnd_toEndOf="@+id/seekbarWeeks"
+            app:layout_constraintStart_toStartOf="@+id/seekbarWeeks" />
+
+        <com.ouday.core.component.ui.textview.TextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/rollingAverage"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/chartContainer"
+            app:layout_constraintEnd_toEndOf="@+id/seekbarRollingAverage"
+            app:layout_constraintStart_toStartOf="@+id/seekbarRollingAverage"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
